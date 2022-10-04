@@ -208,12 +208,12 @@ class Layer(object):
 
 if __name__ == "__main__":
     # generate and visualize Make-Moons dataset
-    # X, y = generate_data()
-    # model = DeepNeuralNetwork(nn_input_dim=2, nn_layer_dim=[5, 5, 5, 5, 5], nn_output_dim=2, actFun_type='relu')
+    X, y = generate_data()
+    model = DeepNeuralNetwork(nn_input_dim=2, nn_layer_dim=[5, 5, 5, 5, 5], nn_output_dim=2, actFun_type='relu')
 
     # generate and visualize choice of dataset
-    X, y = generate_data_choice()
-    model = DeepNeuralNetwork(nn_input_dim=2, nn_layer_dim=[50, 50, 50, 50, 50], nn_output_dim=2, actFun_type='relu')
+    # X, y = generate_data_choice()
+    # model = DeepNeuralNetwork(nn_input_dim=2, nn_layer_dim=[50, 50, 50, 50, 50], nn_output_dim=2, actFun_type='relu')
 
     model.fit_model(X, y)
     model.visualize_decision_boundary(X, y)

@@ -1,4 +1,5 @@
 __author__ = 'tan_nguyen'
+__author__ = 'eddy_huang'
 
 import numpy as np
 from sklearn import datasets, linear_model
