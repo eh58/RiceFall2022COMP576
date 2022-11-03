@@ -226,5 +226,5 @@ for i in range(32):
 plt.show()
 
 # Calculate the statistics of the activations in the convolutional layers on test images.
-print("activation1: mean %g, variance %g" % (np.mean(np.array(activation1)), np.var(np.array(activation1))))
-print("activation2: mean %g, variance %g" % (np.mean(np.array(activation2)), np.var(np.array(activation2))))
+print("activation1: mean %g, variance %g, min %g, max %g, std %g" % (np.mean(np.array(activation1)), np.var(np.array(activation1)), np.min(np.array(activation1)), np.max(np.array(activation1)), np.std(np.array(activation1))))
+print("activation2: mean %g, variance %g, min %g, max %g, std %g" % (np.mean(np.array(activation2)), np.var(np.array(activation2)), np.min(np.array(activation2)), np.max(np.array(activation2)), np.std(np.array(activation2))))
