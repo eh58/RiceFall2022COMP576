@@ -153,10 +153,14 @@ cross_entropy = tf.nn.softmax_cross_entropy_with_logits(labels=tf_labels, logits
 cross_entropy = tf.reduce_mean(cross_entropy)
 # optimizer = tf.train.AdamOptimizer(1e-2).minimize(cross_entropy)
 optimizer = tf.train.AdamOptimizer(1e-3).minimize(cross_entropy)
+# optimizer = tf.train.AdamOptimizer(1e-3, 0.6, 0.6).minimize(cross_entropy)
 # optimizer = tf.train.AdamOptimizer(1e-4).minimize(cross_entropy)
 # optimizer = tf.train.GradientDescentOptimizer(1e-2).minimize(cross_entropy)
 # optimizer = tf.train.GradientDescentOptimizer(1e-3).minimize(cross_entropy)
 # optimizer = tf.train.GradientDescentOptimizer(1e-4).minimize(cross_entropy)
+# optimizer = tf.train.MomentumOptimizer(1e-2, 0.9, False).minimize(cross_entropy)
+# optimizer = tf.train.MomentumOptimizer(1e-3, 0.6, False).minimize(cross_entropy)
+# optimizer = tf.train.MomentumOptimizer(1e-4, 0.9, False).minimize(cross_entropy)
 
 correct_prediction = tf.equal(tf.argmax(h_fc2, 1), tf.argmax(tf_labels, 1))
 accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
@@ -200,12 +204,16 @@ sess.close()
 
 # Plot the accuracy and loss under different parameters
 fig, ax = plt.subplots()
-ax.plot(range(len(accs_list)), accs_list, 'k', label='accuracy for GradientDescentOptimizer')
+ax.plot(range(len(accs_list)), accs_list, 'k', label='accuracy for AdamOptimizer')
+# ax.plot(range(len(accs_list)), accs_list, 'k', label='accuracy for GradientDescentOptimizer')
+# ax.plot(range(len(accs_list)), accs_list, 'k', label='accuracy for MomentumOptimizer')
 ax.legend(loc='upper right', shadow=True)
 plt.show()
 
 fig, bx = plt.subplots()
-bx.plot(range(len(losses_list)), losses_list, 'k', label='loss for GradientDescentOptimizer')
+bx.plot(range(len(losses_list)), losses_list, 'k', label='loss for AdamOptimizer')
+# bx.plot(range(len(losses_list)), losses_list, 'k', label='loss for GradientDescentOptimizer')
+# bx.plot(range(len(losses_list)), losses_list, 'k', label='loss for MomentumOptimizer')
 bx.legend(loc='upper right', shadow=True)
 plt.show()
 

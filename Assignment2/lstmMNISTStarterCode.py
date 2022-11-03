@@ -18,7 +18,7 @@ displayStep = 10
 
 nInput = 28  # we want the input to take the 28 pixels
 nSteps = 28  # every 28
-nHidden = 128  # number of neurons for the RNN
+nHidden = 512  # number of neurons for the RNN
 nClasses = 10  # this is MNIST so you know
 
 x = tf.placeholder('float', [None, nSteps, nInput])
